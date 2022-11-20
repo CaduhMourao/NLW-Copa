@@ -30,6 +30,8 @@ export default function Home(props: HomeProps) {
       await navigator.clipboard.writeText(code)
       
       alert('Bolão criado com sucesso, o código foi copiado para área de transfêrencia!')
+      
+      setPoolTitle('')
 
     } catch (err) {
       console.log(err)
@@ -58,7 +60,8 @@ export default function Home(props: HomeProps) {
           type="text" 
           required 
           placeholder='Qual o nome do seu bolão?'
-          onChange={event => setPoolTitle(event.target.value)} />
+          onChange={event => setPoolTitle(event.target.value)}
+          value={poolTitle} />
 
           <button 
           className='bg-yellow-500 px-6 py-4 rounded text-gray-900 font-bold text-sm uppercase hover:bg-yellow-700'
